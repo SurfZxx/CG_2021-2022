@@ -59,9 +59,9 @@ class Example(Base):
 
     def update(self):
         GL.glUseProgram(self.program_ref)
-        GL.glDrawArrays(GL.GL_POINTS, 0, self.vertex_count)
+        # GL.glDrawArrays(GL.GL_POINTS, 0, self.vertex_count)
         # GL.glDrawArrays(GL.GL_LINE_LOOP, 0, self.vertex_count)
-        # GL.glDrawArrays(GL.GL_TRIANGLE_FAN, 0, self.vertex_count)
+        GL.glDrawArrays(GL.GL_TRIANGLE_FAN, 0, self.vertex_count)
 
 
 # Instantiate this class and run the program
