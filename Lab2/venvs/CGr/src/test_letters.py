@@ -44,24 +44,36 @@ class Example(Base):
         position_data = [[-0.22, 0.27, 0.0],
                          [-0.29, 0.27, 0.0],
                          [-0.29, 0.05, 0.0],
+                         [-0.41, 0.05, 0.0],
                          [-0.52, 0.05, 0.0],
                          [-0.52, 0.27, 0.0],
                          [-0.59, 0.27, 0.0],
+                         [-0.59, 0.05, 0.0],
+                         [-0.59, 0.05, 0.0],
                          [-0.59, -0.25, 0.0],
                          [-0.52, -0.25, 0.0],
                          [-0.52, -0.03, 0.0],
+                         [-0.41, -0.03, 0.0],
                          [-0.29, -0.03, 0.0],
                          [-0.29, -0.25, 0.0],
-                         [-0.22, -0.25, 0.0]]
+                         [-0.22, -0.25, 0.0],
+                         [-0.22, -0.03, 0.0],
+                         [-0.22, 0.05, 0.0]]
         self.vertex_count = len(position_data)
         position_attribute = Attribute("vec3", position_data)
         position_attribute.associate_variable(self.program_ref, 'position')
         color_data = [[1.0, 0.0, 0.0],
                       [1.0, 0.5, 0.0],
+                      [1.0, 0.0, 0.0],
+                      [1.0, 0.0, 0.0],
                       [1.0, 1.0, 0.0],
                       [0.0, 1.0, 0.0],
+                      [1.0, 0.0, 0.0],
+                      [1.0, 0.0, 0.0],
+                      [1.0, 0.0, 0.0],
                       [0.0, 0.0, 1.0],
                       [0.5, 0.0, 1.0],
+                      [1.0, 0.0, 0.0],
                       [1.0, 0.0, 0.0],
                       [1.0, 0.0, 0.0],
                       [1.0, 0.0, 0.0],
@@ -74,8 +86,9 @@ class Example(Base):
     def update(self):
         GL.glUseProgram(self.program_ref)
         # GL.glDrawArrays(GL.GL_POINTS, 0, self.vertex_count)
-        GL.glDrawArrays(GL.GL_LINE_LOOP, 0, self.vertex_count)
+        # GL.glDrawArrays(GL.GL_LINE_LOOP, 0, self.vertex_count)
         # GL.glDrawArrays(GL.GL_TRIANGLE_FAN, 0, self.vertex_count)
+        GL.glDrawArrays(GL.GL_TRIANGLE_STRIP, 0, self.vertex_count)
 
 
 # Instantiate this class and run the program
