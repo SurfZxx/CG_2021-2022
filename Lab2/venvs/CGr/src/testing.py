@@ -27,6 +27,7 @@ class Example(Base):
         """
         self.program_ref = Utils.initialize_program(vs_code, fs_code)
         # render settings #
+        GL.glPointSize(6)
         GL.glLineWidth(4)
         
         # Set up vertex array object - letter_h #
