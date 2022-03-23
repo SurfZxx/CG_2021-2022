@@ -41,7 +41,39 @@ class Example(Base):
         vao_ref = GL.glGenVertexArrays(1)
         GL.glBindVertexArray(vao_ref)
         # Set up vertex attributes #
-        position_data = [[-0.22, 0.27, 0.0], #E
+        position_data_h = [[-0.22, 0.27, 0.0], #E
+                         [-0.29, 0.27, 0.0], #F
+                         [-0.29, -0.25, 0.0], #O
+                         [-0.22, -0.25, 0.0], #P
+                         [-0.22, 0.27, 0.0], #E
+                         [-0.22, -0.03, 0.0], #V
+                         [-0.22, 0.05, 0.0], #U
+                         [-0.29, 0.05, 0.0], #G
+                         [-0.29, -0.03, 0.0], #N
+                         [-0.52, 0.05, 0.0], #H
+                         [-0.52, -0.03, 0.0], #M
+                         [-0.29, -0.03, 0.0], #N
+                         [-0.52, -0.03, 0.0], #M
+                         [-0.52, 0.05, 0.0], #H
+                         [-0.52, -0.25, 0.0], #L
+                         [-0.59, -0.25, 0.0], #K
+                         [-0.52, 0.27, 0.0], #I
+                         [-0.59, 0.27, 0.0], #J
+                         [-0.59, -0.25, 0.0]] #K
+                        #  [-0.29, -0.03, 0.0], #N
+                        #  [-0.52, 0.05, 0.0], #H
+                        #  [-0.52, 0.27, 0.0], #I
+                        #  [-0.59, 0.27, 0.0], #J
+                        #  
+                        #  
+                        #  [-0.52, 0.27, 0.0]] #I
+                        #  [-0.59, 0.05, 0.0], #Q
+                         
+         # Set up vertex array object #
+        vao_ref = GL.glGenVertexArrays(1)
+        GL.glBindVertexArray(vao_ref)
+        # Set up vertex attributes #
+        position_data_h = [[-0.22, 0.27, 0.0], #E
                          [-0.29, 0.27, 0.0], #F
                          [-0.29, -0.25, 0.0], #O
                          [-0.22, -0.25, 0.0], #P
@@ -70,10 +102,11 @@ class Example(Base):
                         #  [-0.59, 0.05, 0.0], #Q
                          
                          
+                
 
                          
-        self.vertex_count = len(position_data)
-        position_attribute = Attribute("vec3", position_data)
+        self.vertex_count = len(position_data_h)
+        position_attribute = Attribute("vec3", position_data_h)
         position_attribute.associate_variable(self.program_ref, 'position')
         color_data = [[0.0, 0.0, 1.0],
                       [0.0, 0.0, 1.0],
