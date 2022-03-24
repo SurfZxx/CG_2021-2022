@@ -120,15 +120,15 @@ class Example(Base):
         
         # Draw the letter_h
         GL.glBindVertexArray(self.vao_letter_h)
-        GL.glDrawArrays(GL.GL_POINTS, 0, self.vertex_count_letter_h)
+        # GL.glDrawArrays(GL.GL_POINTS, 0, self.vertex_count_letter_h)
         # GL.glDrawArrays(GL.GL_LINE_LOOP, 0, self.vertex_count_letter_h)
-        # GL.glDrawArrays(GL.GL_TRIANGLE_STRIP, 0, self.vertex_count_letter_h)
+        GL.glDrawArrays(GL.GL_TRIANGLE_STRIP, 0, self.vertex_count_letter_h)
         
         # Draw the letter_s
         GL.glBindVertexArray(self.vao_letter_s)
-        GL.glDrawArrays(GL.GL_POINTS, 0, self.vertex_count_letter_s)
+        # GL.glDrawArrays(GL.GL_POINTS, 0, self.vertex_count_letter_s)
         # GL.glDrawArrays(GL.GL_LINE_LOOP, 0, self.vertex_count_letter_s)
-        # GL.glDrawArrays(GL.GL_TRIANGLE_STRIP, 0, self.vertex_count_letter_s)
+        GL.glDrawArrays(GL.GL_TRIANGLE_STRIP, 0, self.vertex_count_letter_s)
 
 
 
