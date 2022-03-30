@@ -1,4 +1,4 @@
-"""Triangle moves along a circular path"""
+"""Letter moves along a circular path"""
 import math
 import OpenGL.GL as GL
 
@@ -9,7 +9,7 @@ from core.uniform import Uniform
 
 
 class Example(Base):
-    """ Animate triangle moving in a circular path around the origin """
+    """ Animate letter moving in a circular path around the origin """
     def initialize(self):
         print("Initializing program...")
         # Initialize program #

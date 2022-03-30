@@ -22,7 +22,7 @@ class Base(object):
         # create and display the window
         self.screen = pygame.display.set_mode(screenSize, displayFlags)
         # set the text that appears in the title bar of the window
-        pygame.display.set_caption("CGr@UAlg")
+        pygame.display.set_caption("a61269")
         # determine if main loop is active
         self.running = True
         # manage time-related data and operations
