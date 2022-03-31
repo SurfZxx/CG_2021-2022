@@ -34,7 +34,7 @@ class Example(Base):
         self.program_ref = Utils.initialize_program(vs_code, fs_code)
         # render settings (optional) #
         # Specify color used when clearly
-        GL.glClearColor(0.0, 0.0, 0.0, 1.0)
+        GL.glClearColor(0.0, 1.0, 0.0, 1.0)
         # Set up vertex array object #
         vao_ref = GL.glGenVertexArrays(1)
         GL.glBindVertexArray(vao_ref)
@@ -95,16 +95,16 @@ class Example(Base):
         # Set up uniforms #
         self.translation = Uniform('vec3', [0.0, 0.0, 0.0])
         self.translation.locate_variable(self.program_ref, 'translation')
-        self.base_color = Uniform('vec3', [0.0, 0.0, 0.0])
+        self.base_color = Uniform('vec3', [1.0, 1.0, 1.0])
         self.base_color.locate_variable(self.program_ref, 'baseColor')
 
     def update(self):
         """ Update data """
         # Fast change, note 3 * self.time
         # self.base_color.data[0] = (math.sin(3 * self.time) + 1) / 2
-        # self.base_color.data[0] = (math.sin(self.time) + 1) / 2
-        # self.base_color.data[1] = (math.sin(self.time + 2.1) + 1) / 2
-        self.base_color.data[2] = (math.sin(self.time + 4.2) + 1) / 2
+        self.base_color.data[0] = (math.sin(self.time *2) + 1) / 2
+        self.base_color.data[1] = (math.sin(self.time *2) + 1) / 2
+        self.base_color.data[2] = (math.sin(self.time *2) + 1) / 2
         ## Render scene
         # Reset color buffer with specified color
         GL.glClear(GL.GL_COLOR_BUFFER_BIT)

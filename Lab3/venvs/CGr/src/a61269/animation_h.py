@@ -33,7 +33,7 @@ class Example(Base):
         self.program_ref = Utils.initialize_program(vs_code, fs_code)
         # Render settings (optional) #
         # Specify color used when clearly
-        GL.glClearColor(0.0, 0.0, 0.0, 1.0)
+        GL.glClearColor(0.0, 1.0, 0.0, 1.0)
         # Set up vertex array object #
         vao_ref = GL.glGenVertexArrays(1)
         GL.glBindVertexArray(vao_ref)
@@ -69,8 +69,9 @@ class Example(Base):
 
     def update(self):
         """ Update data """
-        self.translation.data[0] = 0.75 * math.cos(self.time)
-        self.translation.data[1] = 0.75 * math.sin(self.time)
+        self.translation.data[0] = 0.7 * math.sin(self.time)
+        self.translation.data[1] = 0.7 * math.cos(self.time)
+        
         # Reset color buffer with specified color
         GL.glClear(GL.GL_COLOR_BUFFER_BIT)
         GL.glUseProgram(self.program_ref)
