@@ -3,6 +3,7 @@ import sys
 from math import pi
 import OpenGL.GL as GL
 
+from core.obj_reader import my_obj_reader
 from core.base import Base
 from core.utils import Utils
 from core.attribute import Attribute
@@ -42,11 +43,17 @@ class Example(Base):
         ### Set up vertex array object ###
         vao_ref = GL.glGenVertexArrays(1)
         GL.glBindVertexArray(vao_ref)
+        
         ### Set up vertex attribute: three points of triangle ###
-        position_data = [[0.0,   0.2,  0.0], [0.1,  -0.2,  0.0], [-0.1, -0.2,  0.0]]
+        # position_data = [[0.0,   0.2,  0.0], [0.1,  -0.2,  0.0], [-0.1, -0.2,  0.0]]
+        
+        ### Set up vertex attribute: reading the blender model
+        position_data = my_obj_reader('BedModel.obj')
         self.vertex_count = len(position_data)
         position_attribute = Attribute('vec3', position_data)
-        position_attribute.associate_variable(self.program_ref, 'position')
+        # position_attribute.associate_variable(self.program_ref, 'position')
+        
+
         ### Set up uniforms ###
         m_matrix = Matrix.make_translation(0, 0, -1)
         self.model_matrix = Uniform('mat4', m_matrix)
