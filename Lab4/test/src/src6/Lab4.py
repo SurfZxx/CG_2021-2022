@@ -2,8 +2,9 @@
 import sys
 from math import pi
 import OpenGL.GL as GL
-from core.obj_reader import my_obj_reader;
+from OpenGL.GL import *
 
+from core.obj_reader import my_obj_reader
 from core.base import Base
 from core.utils import Utils
 from core.attribute import Attribute
@@ -30,27 +31,38 @@ class Example(Base):
             }
         """
         fs_code = """
+            in vec3 color;
             out vec4 fragColor;
             void main()
             {
-                fragColor = vec4(1.0, 1.0, 0.0, 1.0);
+                fragColor = vec4(1.0, 1.0, 1.0, 1.0);
             }
         """
         self.program_ref = Utils.initialize_program(vs_code, fs_code)
+
         ### Render settings ###
+        
         GL.glClearColor(0.0, 0.0, 0.0, 1.0)
         GL.glEnable(GL.GL_DEPTH_TEST)
+        
         ### Set up vertex array object ###
         vao_ref = GL.glGenVertexArrays(1)
         GL.glBindVertexArray(vao_ref)
 
 
         ### Set up vertex attribute: three points of triangle ###
-        position_data = my_obj_reader('BedModel.obj')
+        # position_data = [[0.0,   0.2,  0.0], [0.1,  -0.2,  0.0], [-0.1, -0.2,  0.0]]
 
+        ### Set up vertex attribute: reading the blender model
+        position_data = my_obj_reader('core/BedModel.obj')
         self.vertex_count = len(position_data)
         position_attribute = Attribute('vec3', position_data)
         position_attribute.associate_variable(self.program_ref, 'position')
+
+        
+        
+
+
         ### Set up uniforms ###
         m_matrix = Matrix.make_translation(0, 0, -1)
         self.model_matrix = Uniform('mat4', m_matrix)
@@ -59,7 +71,7 @@ class Example(Base):
         self.projection_matrix = Uniform('mat4', p_matrix)
         self.projection_matrix.locate_variable(self.program_ref, 'projectionMatrix')
         # movement speed, units per second
-        self.move_speed = 0.5
+        self.move_speed = 1.5
         # rotation speed, radians per second
         self.turn_speed = 90 * (pi / 180)
 
@@ -113,23 +125,12 @@ class Example(Base):
         if self.input.is_key_pressed('o'):
             m = Matrix.make_rotation_z(-turn_amount)
             self.model_matrix.data = self.model_matrix.data @ m
-        if self.input.is_key_pressed('p'):
-            m = Matrix.make_rotation_x(turn_amount)
-            self.model_matrix.data = self.model_matrix.data @ m
-        if self.input.is_key_pressed('ç'):
-            m = Matrix.make_rotation_x(-turn_amount)
-            self.model_matrix.data = self.model_matrix.data @ m
-        if self.input.is_key_pressed('m'):
-            m = Matrix.make_rotation_y(turn_amount)
-            self.model_matrix.data = self.model_matrix.data @ m
-        if self.input.is_key_pressed('n'):
-            m = Matrix.make_rotation_y(-turn_amount)
-            self.model_matrix.data = self.model_matrix.data @ m
         ### Render scene ###
         GL.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT)
         GL.glUseProgram(self.program_ref)
         self.projection_matrix.upload_data()
         self.model_matrix.upload_data()
+        # GL.glDrawArrays(GL.GL_TRIANGLES, 0, self.vertex_count)
         GL.glDrawArrays(GL.GL_LINES, 0, self.vertex_count)
 
 
