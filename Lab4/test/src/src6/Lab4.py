@@ -42,7 +42,7 @@ class Example(Base):
 
         ### Render settings ###
         
-        GL.glClearColor(0.0, 0.0, 0.0, 1.0)
+        GL.glClearColor(0.0, 1.0, 0.0, 1.0)
         GL.glEnable(GL.GL_DEPTH_TEST)
         
         ### Set up vertex array object ###
