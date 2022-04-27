@@ -1,22 +1,15 @@
 import OpenGL.GL as GL
 
 from core.base import Base
-from math import pi
-from geometry import geometry
-from core_ext.renderer import Renderer
-from geometry.box import BoxGeometry
-from geometry.cylindrical import CylindricalGeometry
-from geometry.cuboid import CuboidGeometry
-from geometry.cylinder import CylinderGeometry
-from geometry.rectangle import RectangleGeometry
-from geometry.polygon import PolygonGeometry
 from core_ext.camera import Camera
 from core_ext.mesh import Mesh
 from core_ext.renderer import Renderer
 from core_ext.scene import Scene
+from geometry.box import BoxGeometry
+from geometry.cuboid import CuboidGeometry
+from geometry.pyramid import PyramidGeometry
 from material.surface import SurfaceMaterial
-from core.matrix import Matrix
-from core.uniform import Uniform
+from material.point import PointMaterial
 
 class Example(Base) :
     def initialize(self):
