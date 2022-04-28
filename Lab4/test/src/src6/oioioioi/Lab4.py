@@ -42,7 +42,7 @@ class Example(Base):
 
         ### Render settings ###
         
-        GL.glClearColor(0.0, 1.0, 0.0, 1.0)
+        GL.glClearColor(0.0, 0.0, 0.0, 1.0)
         GL.glEnable(GL.GL_DEPTH_TEST)
         
         ### Set up vertex array object ###
@@ -54,9 +54,7 @@ class Example(Base):
         # position_data = [[0.0,   0.2,  0.0], [0.1,  -0.2,  0.0], [-0.1, -0.2,  0.0]]
 
         ### Set up vertex attribute: reading the blender model
-        # position_data = my_obj_reader('core/BedModel.obj')
-        # position_data = my_obj_reader('core/SimpleBed.obj')
-        position_data = my_obj_reader('core/SimpleBedTest.obj')
+        position_data = my_obj_reader('core/BedModel.obj')
         self.vertex_count = len(position_data)
         position_attribute = Attribute('vec3', position_data)
         position_attribute.associate_variable(self.program_ref, 'position')
@@ -125,7 +123,7 @@ class Example(Base):
             m = Matrix.make_rotation_z(turn_amount)
             self.model_matrix.data = self.model_matrix.data @ m
         if self.input.is_key_pressed('o'):
-            m = Matrix.make_rotation_y(-turn_amount)
+            m = Matrix.make_rotation_z(-turn_amount)
             self.model_matrix.data = self.model_matrix.data @ m
         ### Render scene ###
         GL.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT)
@@ -133,7 +131,6 @@ class Example(Base):
         self.projection_matrix.upload_data()
         self.model_matrix.upload_data()
         # GL.glDrawArrays(GL.GL_TRIANGLES, 0, self.vertex_count)
-        # GL.glDrawArrays(GL.GL_POINTS, 0, self.vertex_count)
         GL.glDrawArrays(GL.GL_LINES, 0, self.vertex_count)
 
 
