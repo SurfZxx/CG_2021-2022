@@ -1,0 +1,27 @@
+options{
+ directory “/etc/bind”;
+ query-source address * port 53;
+ forward only ;
+ forwarders { 10.10.22.228; 193.136.224.100; };
+ };
+ zone “.” {
+ type hint;
+ file “db.root”;
+ };
+ zone “127.in-addr.arpa” {
+ type master;
+ file “db.127”;
+ notify no;
+ };
+ zone “grs.deei” {
+ type master;
+ file “db.hosts”;
+ };
+ zone “160.11.10.in-addr.arpa” {
+ type master;
+ file “db.hosts.rev”;
+ };
+zone “nerds.grs.deei” {
+ type forward;
+ forwarders { 10.11.160.1; };
+ };
