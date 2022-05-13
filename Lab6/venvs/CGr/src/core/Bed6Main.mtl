@@ -1,0 +1,112 @@
+# Blender MTL File: 'Bed6Main.blend'
+# Material Count: 9
+
+newmtl Material
+Ns 359.999993
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\Downloads\\photos_2019_1_16_fst_gray-canvas.jpg
+
+newmtl Material.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Metal009_2K_Color.jpg
+map_Ns C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Metal009_2K_Roughness.jpg
+refl C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Metal009_2K_Metalness.jpg
+
+newmtl Material.002
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Fabric007_2K_Color.jpg
+
+newmtl Material.003
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Metal009_2K_Color.jpg
+map_Ns C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Metal009_2K_Roughness.jpg
+refl C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Metal009_2K_Metalness.jpg
+
+newmtl Material.004
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Metal009_2K_Color.jpg
+map_Ns C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Metal009_2K_Roughness.jpg
+refl C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Metal009_2K_Metalness.jpg
+
+newmtl Material.005
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Metal009_2K_Color.jpg
+map_Ns C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Metal009_2K_Roughness.jpg
+refl C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Metal009_2K_Metalness.jpg
+
+newmtl Material.006
+Ns 1000.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Fabric019_2K_Color.jpg
+map_Ns C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Fabric019_2K_Roughness.jpg
+
+newmtl Material.007
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Fabric029_2K_Color.jpg
+map_Ns C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Fabric029_2K_Roughness.jpg
+
+newmtl Material.008
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Fabric048_2K_Color.jpg
+map_Ns C:\\Users\\SurfZ\\Documents\\GitHub\\CG_2021-2022\\Lab6\\venvs\\CGr\\src\\Fabric048_2K_Roughness.jpg
