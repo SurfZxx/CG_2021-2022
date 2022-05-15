@@ -1,0 +1,36 @@
+# Blender MTL File: 'small_wooden_table_01_4k.blend'
+# Material Count: 3
+
+newmtl Default_OBJ
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl Default_OBJ.001
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl small_wooden_table_01
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Bump C:\\Users\\SurfZ\\AppData\\Local\\Temp\\Rar$DRa82484.1647\\textures\\small_wooden_table_01_nor_gl_4k.exr
+map_Kd C:\\Users\\SurfZ\\AppData\\Local\\Temp\\Rar$DRa82484.1647\\textures\\small_wooden_table_01_diff_4k.jpg
+map_Ns C:\\Users\\SurfZ\\AppData\\Local\\Temp\\Rar$DRa82484.1647\\textures\\small_wooden_table_01_rough_4k.jpg
+refl C:\\Users\\SurfZ\\AppData\\Local\\Temp\\Rar$DRa82484.1647\\textures\\small_wooden_table_01_metal_4k.exr

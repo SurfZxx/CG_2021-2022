@@ -34,36 +34,36 @@ class Example(Base):
         # geometry = pywavefront.Wavefront('closet.obj', collect_faces=True)
         #apagar
         
-        vs_code = """
-            in vec3 position;
-            uniform mat4 projectionMatrix;
-            uniform mat4 modelMatrix;
-            void main()
-            {
-                gl_Position = projectionMatrix * modelMatrix * vec4(position, 1.0);
-            }
-        """
-        fs_code = """
-            in vec3 color;
-            out vec4 fragColor;
-            void main()
-            {
-                fragColor = vec4(1.0, 1.0, 1.0, 1.0);
-            }
-        """
-        self.program_ref = Utils.initialize_program(vs_code, fs_code)
+        # vs_code = """
+        #     in vec3 position;
+        #     uniform mat4 projectionMatrix;
+        #     uniform mat4 modelMatrix;
+        #     void main()
+        #     {
+        #         gl_Position = projectionMatrix * modelMatrix * vec4(position, 1.0);
+        #     }
+        # """
+        # fs_code = """
+        #     in vec3 color;
+        #     out vec4 fragColor;
+        #     void main()
+        #     {
+        #         fragColor = vec4(1.0, 1.0, 1.0, 1.0);
+        #     }
+        # """
+        # self.program_ref = Utils.initialize_program(vs_code, fs_code)
         
-        position_data = my_obj_reader('core/Bed6Main.obj')
-        self.vertex_count = len(position_data)
-        position_attribute = Attribute('vec3', position_data)
-        position_attribute.associate_variable(self.program_ref, 'position')
+        # position_data = my_obj_reader('core/Bed6Main.obj')
+        # self.vertex_count = len(position_data)
+        # position_attribute = Attribute('vec3', position_data)
+        # position_attribute.associate_variable(self.program_ref, 'position')
         
         
         
         
         #apagar
-        geometry = position_data
-        # geometry = BoxGeometry()
+        # geometry = position_data
+        geometry = BoxGeometry()
         
         
         
