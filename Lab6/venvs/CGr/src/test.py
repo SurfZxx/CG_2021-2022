@@ -22,6 +22,23 @@ from core.matrix import Matrix
 from math import *
 
 class Test(Base):
+    
+    def load_texture(path, texture):
+        GL.glBindTexture(GL.GL_TEXTURE_2D, texture)
+        # Set the texture wrapping parameters
+        GL.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_WRAP_S, GL.GL_REPEAT)
+        GL.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_WRAP_T, GL.GL_REPEAT)
+        # Set texture filtering parameters
+        GL.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_LINEAR)
+        GL.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR)
+        # load image
+        image = Image.open(path)
+        image = image.transpose(Image.FLIP_TOP_BOTTOM)
+        img_data = image.convert("RGBA").tobytes()
+        GL.glTexImage2D(GL.GL_TEXTURE_2D, 0, GL.GL_RGBA, image.width, image.height, 0, GL.GL_RGBA, GL.GL_UNSIGNED_BYTE, img_data)
+        return 
+
+
     def initialize(self):
         """Setup the object and shaders"""
         print('Initializing program...')
@@ -43,7 +60,7 @@ class Test(Base):
             out vec4 fragColor;
             void main()
             {
-                fragColor = vec4(1.0, 0.0, 0.0, 1.0);
+                fragColor = vec4(1.0,1.0,1.0, 1.0);
             }
         """
         self.program_ref = Utils.initialize_program(vs_code, fs_code)
@@ -51,19 +68,8 @@ class Test(Base):
         ### Render settings ###
         GL.glClearColor(0.0, 1.0, 0.0, 1.0)
         GL.glEnable(GL.GL_DEPTH_TEST)
-        self.texture = GL.glGenTextures(1)
-        GL.glBindTexture(GL.GL_TEXTURE_2D, self.texture)
-        GL.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_WRAP_S, GL.GL_REPEAT)
-        GL.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_WRAP_T, GL.GL_REPEAT)
-        GL.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MIN_FILTER, GL.GL_NEAREST)
-        GL.glTexParameteri(GL.GL_TEXTURE_2D, GL.GL_TEXTURE_MAG_FILTER, GL.GL_LINEAR)
-        
-        image = pygame.image.load('core/wood_solid.jpg').convert()
-        image_width, image_heigth = image.get_rect().size
-        image_data = pygame.image.tostring(image, "RGBA")
-        GL.glTexImage2D(GL.GL_TEXTURE_2D, 0, GL.GL_RGBA, image_width, image_heigth, 0, GL.GL_RGBA, GL.GL_UNSIGNED_BYTE, image_data)
-        GL.glGenerateMipmap(GL.GL_TEXTURE_2D)
-        self.texture = GL.glTexImage2D(GL.GL_TEXTURE_2D, 0, GL.GL_RGBA, image_width, image_heigth, 0, GL.GL_RGBA, GL.GL_UNSIGNED_BYTE, image_data)
+        self.textures = GL.glGenTextures(1)
+        self.load_texture("core/wood_solid.jpg", self.textures[1])
         
         ### Set up vertex array object ###
         vao_ref = GL.glGenVertexArrays(1)
@@ -139,7 +145,8 @@ class Test(Base):
         self.renderer.render(self.scene, self.camera)
         self.projection_matrix.upload_data()
         self.model_matrix.upload_data()
-        GL.glDrawArrays(self.texture, 0, self.vertex_count)
+        GL.glBindTexture(GL.GL_TEXTURE_2D, self.textures[1])
+        GL.glDrawArrays(GL.GL_TRIANGLES, 0, self.vertex_count)
         # GL.glDrawArrays(GL.GL_LINES, 0, self.vertex_count)
                 
 Test(screen_size=[800, 600]).run()
